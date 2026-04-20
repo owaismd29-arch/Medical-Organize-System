@@ -1,4 +1,4 @@
-name: Java CI with Maven (Mac & Windows)
+name: Java CI with Maven with Windows and Mac
 
 on:
   push:
@@ -10,6 +10,8 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest]
+
+    name: Build with Java 17 on ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
