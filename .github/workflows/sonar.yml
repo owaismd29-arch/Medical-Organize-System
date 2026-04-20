@@ -31,9 +31,10 @@ jobs:
     - name: Build with Maven and SonarCloud
       run: >
         xvfb-run mvn verify -Pjacoco sonar:sonar
-        -Dsonar.organization=YOUR_SONAR_ORG
+        xvfb-run mvn verify -Pjacoco sonar:sonar
+        -Dsonar.organization=owaismd29-arch
         -Dsonar.host.url=https://sonarcloud.io
-        -Dsonar.projectKey=YOUR_SONAR_PROJECT_KEY
+        -Dsonar.projectKey=owaismd29-arch_Medical-Organize-System
         
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
