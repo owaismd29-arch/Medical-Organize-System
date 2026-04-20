@@ -32,7 +32,7 @@ jobs:
       run: sudo apt-get install -y xvfb
 
     - name: Build with Maven and SonarCloud
-      run: xvfb-run mvn test -Pjacoco -Djava.awt.headless=true -Dpit.skip=true -Dfailsafe.skip=true sonar:sonar -Dsonar.organization=owaismd29-arch -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=owaismd29-arch_Medical-Organize-System
+      run: xvfb-run mvn test -Pjacoco -Dpit.skip=true sonar:sonar -Dsonar.organization=owaismd29-arch -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=owaismd29-arch_Medical-Organize-System
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
