@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      workdir: medicalorganizer
     strategy:
       matrix:
         include:
@@ -45,10 +43,8 @@ jobs:
           xvfb-run mvn test -Pjacoco
           -Djava.awt.headless=true
           -Dpit.skip=true
-        working-directory: ${{ env.workdir }}
 
       - name: Run Coveralls Report
         run: mvn coveralls:report ${{ matrix.additional-maven-args }}
-        working-directory: ${{ env.workdir }}
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
