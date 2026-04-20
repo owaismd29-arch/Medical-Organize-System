@@ -168,7 +168,14 @@
 				<configuration>
 					<systemPropertyVariables>
 						<mongo.port>${mongo.mapped.port}</mongo.port>
+						<java.awt.headless>true</java.awt.headless>
 					</systemPropertyVariables>
+					<excludes>
+						<exclude>**/*BDD.java</exclude>
+						<exclude>**/*E2E.java</exclude>
+						<exclude>**/*SwingViewIT.java</exclude>
+						<exclude>**/*ModelViewControllerIT.java</exclude>
+					</excludes>
 				</configuration>
 				<executions>
 					<execution>
@@ -177,36 +184,6 @@
 							<goal>integration-test</goal>
 							<goal>verify</goal>
 						</goals>
-					</execution>
-					<execution>
-						<id>e2e-tests</id>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-						<configuration>
-							<excludes>
-								<exclude>**/*IT.java</exclude>
-							</excludes>
-							<includes>
-								<include>**/*E2E.java</include>
-							</includes>
-						</configuration>
-					</execution>
-					<execution>
-						<id>bdd-tests</id>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-						<configuration>
-							<excludes>
-								<exclude>**/*IT.java</exclude>
-							</excludes>
-							<includes>
-								<include>**/*BDD.java</include>
-							</includes>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
