@@ -29,5 +29,11 @@ jobs:
           java-version: 17
           distribution: 'temurin'
 
-      - name: Build with Maven
+      - name: Build with Maven (Mac)
+        if: matrix.os == 'macos-latest'
         run: mvn test -Dpit.skip=true
+
+      - name: Build with Maven (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: mvn test "-Dpit.skip=true"
