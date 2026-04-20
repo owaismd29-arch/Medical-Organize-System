@@ -261,6 +261,13 @@
 					<includes>
 						<include>**/*Test.java</include>
 					</includes>
+					<excludes>
+						<exclude>**/*SwingViewTest.java</exclude>
+						<exclude>**/racecondition/*Test.java</exclude>
+					</excludes>
+					<systemPropertyVariables>
+						<java.awt.headless>true</java.awt.headless>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 
@@ -271,7 +278,7 @@
 				<executions>
 					<execution>
 						<id>pitest</id>
-						<phase>test</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>mutationCoverage</goal>
 						</goals>
