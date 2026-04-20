@@ -1,13 +1,13 @@
-[![Java CI with Maven in Linux](../../actions/workflows/maven.yml/badge.svg)](../../actions/workflows/maven.yml)
-[![Java CI with Maven, Docker and SonarCloud in Linux](../../actions/workflows/sonar.yml/badge.svg)](../../actions/workflows/sonar.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=coverage)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=bugs)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=YOUR_SONAR_PROJECT_KEY&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=YOUR_SONAR_PROJECT_KEY)
+[![Java CI with Maven in Linux](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/maven.yml)
+[![Java CI with Maven, Docker and SonarCloud in Linux](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/sonar.yml/badge.svg?branch=main)](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/sonar.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=coverage)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=bugs)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 
 # Medical Organize System
 
