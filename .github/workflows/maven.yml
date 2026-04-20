@@ -12,10 +12,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - java: 8
-            additional-maven-args: >
+          - java: 11
+            additional-maven-args: >-
               -Pcoveralls
-              -DrepoToken=$COVERALLS_REPO_TOKEN
+              -DrepoToken=${{ secrets.COVERALLS_REPO_TOKEN }}
               -DpullRequest=${{ github.event.pull_request.number }}
 
     name: Build with Java ${{ matrix.java }} on Linux
@@ -24,9 +24,10 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up JDK ${{ matrix.java }}
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.java }}
+          distribution: 'temurin'
 
       - name: Cache Maven packages
         uses: actions/cache@v3
@@ -36,14 +37,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2-
 
+      - name: Install xvfb
+        run: sudo apt-get install -y xvfb
+
       - name: Build with Maven
-        run: >
-          xvfb-run mvn verify
+        run: xvfb-run mvn verify -Pjacoco
         working-directory: ${{ env.workdir }}
 
       - name: Run Coveralls Report
-        run: >
-          mvn coveralls:report -Pcoveralls ${{ matrix.additional-maven-args }}
+        run: mvn coveralls:report ${{ matrix.additional-maven-args }}
         working-directory: ${{ env.workdir }}
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
