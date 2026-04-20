@@ -43,6 +43,6 @@ jobs:
         run: xvfb-run mvn verify -Pjacoco
 
       - name: Run Coveralls Report
-        run: mvn coveralls:report ${{ matrix.additional-maven-args }}
+        run: mvn -Djava.awt.headless=true coveralls:report
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
