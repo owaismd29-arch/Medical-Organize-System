@@ -30,4 +30,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn test -Djava.awt.headless=true -Dpit.skip=true
+        run: mvn test -Dpit.skip=true
