@@ -11,7 +11,7 @@ jobs:
       matrix:
         include:
           - java: 11
-            additional-maven-args: "-Pcoveralls -DrepoToken=$COVERALLS_REPO_TOKEN -DpullRequest=${{ github.event.pull_request.number }}"
+            additional-maven-args: "-Pcoveralls -DrepoToken=${{ secrets.COVERALLS_REPO_TOKEN }} -DpullRequest=${{ github.event.pull_request.number }}"
 
     name: Build with Java ${{ matrix.java }} on Linux
 
