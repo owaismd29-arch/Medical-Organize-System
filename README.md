@@ -15,7 +15,7 @@ A CRUD-based Medical Patient Management System built with Java, following the MV
 
 ## Architecture
 
-The project follows the **MVC (Model-View-Controller)** pattern, mirroring a proven blueprint:
+The project follows the **MVC (Model-View-Controller)**:
 
 ```
 src/
