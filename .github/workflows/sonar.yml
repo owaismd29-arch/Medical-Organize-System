@@ -34,8 +34,7 @@ jobs:
         -Dsonar.organization=YOUR_SONAR_ORG
         -Dsonar.host.url=https://sonarcloud.io
         -Dsonar.projectKey=YOUR_SONAR_PROJECT_KEY
-
-      working-directory: medicalorganizer
+        
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
