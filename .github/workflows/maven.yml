@@ -7,7 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      workdir: medicalorganizer
     strategy:
       matrix:
         include:
@@ -36,9 +37,13 @@ jobs:
             ${{ runner.os }}-m2-
 
       - name: Build with Maven
-        run: xvfb-run mvn verify
+        run: >
+          xvfb-run mvn verify
+        working-directory: ${{ env.workdir }}
 
       - name: Run Coveralls Report
-        run: mvn coveralls:report -Pcoveralls ${{ matrix.additional-maven-args }}
+        run: >
+          mvn coveralls:report -Pcoveralls ${{ matrix.additional-maven-args }}
+        working-directory: ${{ env.workdir }}
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
