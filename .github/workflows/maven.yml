@@ -30,11 +30,11 @@ jobs:
       - name: Install xvfb
         run: sudo apt-get install -y xvfb
 
-      - name: Build and Generate JaCoCo Report
+      - name: Build, Test and Generate Coverage
         run: xvfb-run mvn test jacoco:report -Pjacoco -Dpit.skip=true
 
-      - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-path: src/main/java
+      - name: Upload Coveralls Report
+        run: mvn coveralls:report -Pcoveralls -DrepoToken=${{ secrets.COVERALLS_REPO_TOKEN }} -DpullRequest=${{ github.event.pull_request.number }}
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        continue-on-error: true
