@@ -353,8 +353,8 @@
 				<configuration>
 					<excludes>
 						<exclude>**/com/example/medicalorganizer/app/**</exclude>
-						<exclude>**/model/*.*</exclude>
-						<exclude>**/view/swing/*.*</exclude>
+						<exclude>**/model/**</exclude>
+						<exclude>**/view/swing/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
@@ -427,8 +427,9 @@
 						<version>0.8.5</version>
 						<configuration>
 							<excludes>
-								<exclude>**/model/*.*</exclude>
+								<exclude>**/model/**</exclude>
 								<exclude>**/com/example/medicalorganizer/app/**</exclude>
+								<exclude>**/view/swing/**</exclude>
 							</excludes>
 						</configuration>
 						<executions>
