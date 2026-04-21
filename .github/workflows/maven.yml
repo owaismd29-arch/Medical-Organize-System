@@ -30,8 +30,8 @@ jobs:
       - name: Install xvfb
         run: sudo apt-get install -y xvfb
 
-      - name: Build with Maven
-        run: xvfb-run mvn test -Pjacoco -Dpit.skip=true
+      - name: Build and Generate Coverage Report
+        run: xvfb-run mvn test -Pjacoco -Pcoveralls -Dpit.skip=true
 
       - name: Run Coveralls Report
         run: mvn coveralls:report -Pcoveralls -DrepoToken=${{ secrets.COVERALLS_REPO_TOKEN }} -DpullRequest=${{ github.event.pull_request.number }}
