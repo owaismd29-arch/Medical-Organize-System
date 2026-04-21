@@ -296,6 +296,12 @@
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
 				<version>${coveralls.version}</version>
+				<configuration>
+					<jacocoReports>
+						<jacocoReport>${project.reporting.outputDirectory}/../jacoco.xml</jacocoReport>
+						<jacocoReport>${project.build.directory}/site/jacoco/jacoco.xml</jacocoReport>
+					</jacocoReports>
+				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>javax.xml.bind</groupId>
