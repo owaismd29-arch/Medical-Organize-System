@@ -63,7 +63,8 @@
 
 		<sonar.coverage.exclusions>
 			**/model/*.*,
-			**/com/example/medicalorganizer/app/**
+			**/com/example/medicalorganizer/app/**,
+			**/view/swing/*.*
 		</sonar.coverage.exclusions>
 
 		<sonar.junit.reportPaths>
@@ -353,6 +354,7 @@
 					<excludes>
 						<exclude>**/com/example/medicalorganizer/app/**</exclude>
 						<exclude>**/model/*.*</exclude>
+						<exclude>**/view/swing/*.*</exclude>
 					</excludes>
 				</configuration>
 				<executions>
