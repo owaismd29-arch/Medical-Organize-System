@@ -61,10 +61,10 @@ public class PatientControllerRaceConditionTest {
         }).when(patientRepository).save(any(Patient.class));
         List<Thread> threads = IntStream.range(0, 10)
             .mapToObj(i -> new Thread(() -> patientController.addPatient(patient)))
-            .peek(t -> t.start())
+            .peek(Thread::start)
             .collect(Collectors.toList());
         Awaitility.await().atMost(10, TimeUnit.SECONDS)
-            .until(() -> threads.stream().noneMatch(t -> t.isAlive()));
+            .until(() -> threads.stream().noneMatch(Thread::isAlive));
         assertThat(patients)
             .containsExactly(patient);
     }
@@ -83,10 +83,10 @@ public class PatientControllerRaceConditionTest {
         }).when(patientRepository).delete(anyString());
         List<Thread> threads = IntStream.range(0, 10)
             .mapToObj(i -> new Thread(() -> patientController.deletePatient(patient)))
-            .peek(t -> t.start())
+            .peek(Thread::start)
             .collect(Collectors.toList());
         Awaitility.await().atMost(10, TimeUnit.SECONDS)
-            .until(() -> threads.stream().noneMatch(t -> t.isAlive()));
+            .until(() -> threads.stream().noneMatch(Thread::isAlive));
         assertThat(patients).isEmpty();
     }
 
@@ -106,10 +106,10 @@ public class PatientControllerRaceConditionTest {
         }).when(patientRepository).update(any(Patient.class));
         List<Thread> threads = IntStream.range(0, 10)
             .mapToObj(i -> new Thread(() -> patientController.updatePatient(updatedPatient)))
-            .peek(t -> t.start())
+            .peek(Thread::start)
             .collect(Collectors.toList());
         Awaitility.await().atMost(10, TimeUnit.SECONDS)
-            .until(() -> threads.stream().noneMatch(t -> t.isAlive()));
+            .until(() -> threads.stream().noneMatch(Thread::isAlive));
         assertThat(patients)
             .containsExactly(updatedPatient);
     }
