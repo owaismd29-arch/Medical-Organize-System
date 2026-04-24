@@ -31,8 +31,8 @@ jobs:
     - name: Install xvfb
       run: sudo apt-get install -y xvfb
 
-    - name: Build with Maven and SonarCloud
-      run: xvfb-run mvn test -Pjacoco -Dpit.skip=true sonar:sonar -Dsonar.organization=owaismd29-arch -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=owaismd29-arch_Medical-Organize-System
+    - name: Build, Test and Analyze
+      run: xvfb-run mvn verify -Pjacoco -Dpit.skip=true -Dfailsafe.skip=true sonar:sonar -Dsonar.organization=owaismd29-arch -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=owaismd29-arch_Medical-Organize-System -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
