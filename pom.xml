@@ -31,41 +31,29 @@
 		<surefire.version>3.0.0-M5</surefire.version>
 		<coveralls.version>4.3.0</coveralls.version>
 		<javax.xml.bind.version>2.3.1</javax.xml.bind.version>
-		<jacoco.verion>0.8.7</jacoco.verion>
+		<jacoco.version>0.8.7</jacoco.version>
 		<io.fabric8.version>0.40.2</io.fabric8.version>
 
 		<sonar.issue.ignore.multicriteria>e11,e12,e13,e14</sonar.issue.ignore.multicriteria>
 
-		<sonar.issue.ignore.multicriteria.e11.ruleKey>
-			java:S117
-		</sonar.issue.ignore.multicriteria.e11.ruleKey>
-		<sonar.issue.ignore.multicriteria.e11.resourceKey>
-			**/*SwingView.java
-		</sonar.issue.ignore.multicriteria.e11.resourceKey>
-		<sonar.issue.ignore.multicriteria.e12.ruleKey>
-			java:S3252
-		</sonar.issue.ignore.multicriteria.e12.ruleKey>
-		<sonar.issue.ignore.multicriteria.e12.resourceKey>
-			**/*SwingView.java
-		</sonar.issue.ignore.multicriteria.e12.resourceKey>
-		<sonar.issue.ignore.multicriteria.e13.ruleKey>
-			java:S2699
-		</sonar.issue.ignore.multicriteria.e13.ruleKey>
-		<sonar.issue.ignore.multicriteria.e13.resourceKey>
-			**/*SwingViewTest.java
-		</sonar.issue.ignore.multicriteria.e13.resourceKey>
-		<sonar.issue.ignore.multicriteria.e14.ruleKey>
-			java:S3577
-		</sonar.issue.ignore.multicriteria.e14.ruleKey>
-		<sonar.issue.ignore.multicriteria.e14.resourceKey>
-			**/*E2E.java
-		</sonar.issue.ignore.multicriteria.e14.resourceKey>
+		<sonar.issue.ignore.multicriteria.e11.ruleKey>java:S117</sonar.issue.ignore.multicriteria.e11.ruleKey>
+		<sonar.issue.ignore.multicriteria.e11.resourceKey>**/*SwingView.java</sonar.issue.ignore.multicriteria.e11.resourceKey>
+		<sonar.issue.ignore.multicriteria.e12.ruleKey>java:S3252</sonar.issue.ignore.multicriteria.e12.ruleKey>
+		<sonar.issue.ignore.multicriteria.e12.resourceKey>**/*SwingView.java</sonar.issue.ignore.multicriteria.e12.resourceKey>
+		<sonar.issue.ignore.multicriteria.e13.ruleKey>java:S2699</sonar.issue.ignore.multicriteria.e13.ruleKey>
+		<sonar.issue.ignore.multicriteria.e13.resourceKey>**/*SwingViewTest.java</sonar.issue.ignore.multicriteria.e13.resourceKey>
+		<sonar.issue.ignore.multicriteria.e14.ruleKey>java:S3577</sonar.issue.ignore.multicriteria.e14.ruleKey>
+		<sonar.issue.ignore.multicriteria.e14.resourceKey>**/*E2E.java</sonar.issue.ignore.multicriteria.e14.resourceKey>
 
 		<sonar.coverage.exclusions>
 			**/model/*.*,
 			**/com/example/medicalorganizer/app/**,
 			**/view/swing/*.*
 		</sonar.coverage.exclusions>
+
+		<sonar.coverage.jacoco.xmlReportPaths>
+			${project.build.directory}/site/jacoco/jacoco.xml
+		</sonar.coverage.jacoco.xmlReportPaths>
 
 		<sonar.junit.reportPaths>
 			${project.build.directory}/surefire-reports,
@@ -86,14 +74,12 @@
 			<version>${assertj-version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>${mokito.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
@@ -104,41 +90,35 @@
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>de.bwaldvogel</groupId>
 			<artifactId>mongo-java-server</artifactId>
 			<version>${de.bwaldvogel.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>testcontainers</artifactId>
 			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>mongodb</artifactId>
 			<version>${testcontainers.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>info.picocli</groupId>
 			<artifactId>picocli</artifactId>
 			<version>${picocli.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.awaitility</groupId>
 			<artifactId>awaitility</artifactId>
 			<version>${awaitility.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
@@ -162,6 +142,7 @@
 		</resources>
 
 		<plugins>
+			<!-- Failsafe: IT tests -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
@@ -189,12 +170,14 @@
 				</executions>
 			</plugin>
 
+			<!-- SonarCloud -->
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>${sonar.version}</version>
 			</plugin>
 
+			<!-- Build helper: add IT/BDD/E2E sources -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -231,6 +214,7 @@
 				</executions>
 			</plugin>
 
+			<!-- Surefire: unit tests only -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -249,69 +233,7 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<groupId>org.pitest</groupId>
-				<artifactId>pitest-maven</artifactId>
-				<version>${pitest-maven-version}</version>
-				<executions>
-					<execution>
-						<id>pitest</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>mutationCoverage</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<targetClasses>
-						<param>com.example.medicalorganizer.*.*</param>
-					</targetClasses>
-					<targetTests>
-						<param>com.example.medicalorganizer.*.*</param>
-					</targetTests>
-					<excludedClasses>
-						<param>com.example.medicalorganizer.repository.**</param>
-						<param>com.example.medicalorganizer.view.swing.**</param>
-						<param>com.example.medicalorganizer.model.**</param>
-						<param>com.example.medicalorganizer.app.**</param>
-					</excludedClasses>
-					<excludedTestClasses>
-						<param>com.example.medicalorganizer.controller.**IT</param>
-						<param>com.example.medicalorganizer.bdd.**</param>
-						<param>com.example.medicalorganizer.**E2E</param>
-						<param>com.example.medicalorganizer.repository.**</param>
-						<param>com.example.medicalorganizer.view.swing.**</param>
-						<param>com.example.medicalorganizer.controller.racecondition.**</param>
-					</excludedTestClasses>
-					<mutators>
-						<mutator>DEFAULTS</mutator>
-					</mutators>
-					<mutationThreshold>80</mutationThreshold>
-					<outputFormats>
-						<param>HTML</param>
-					</outputFormats>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.eluder.coveralls</groupId>
-				<artifactId>coveralls-maven-plugin</artifactId>
-				<version>${coveralls.version}</version>
-				<configuration>
-					<jacocoReports>
-						<jacocoReport>${project.reporting.outputDirectory}/../jacoco.xml</jacocoReport>
-						<jacocoReport>${project.build.directory}/site/jacoco/jacoco.xml</jacocoReport>
-					</jacocoReports>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>javax.xml.bind</groupId>
-						<artifactId>jaxb-api</artifactId>
-						<version>${javax.xml.bind.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
+			<!-- Docker: start/stop MongoDB for IT tests -->
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -345,51 +267,11 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.verion}</version>
-				<configuration>
-					<excludes>
-						<exclude>**/com/example/medicalorganizer/app/**</exclude>
-						<exclude>**/model/**</exclude>
-						<exclude>**/view/swing/**</exclude>
-					</excludes>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-							<goal>report</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>jacoco-check</id>
-						<goals>
-							<goal>check</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<rule>
-									<element>PACKAGE</element>
-									<limits>
-										<limit>
-											<counter>LINE</counter>
-											<value>COVEREDRATIO</value>
-											<minimum>1.0</minimum>
-										</limit>
-									</limits>
-								</rule>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
 	<profiles>
+		<!-- Profile: skip testcontainers -->
 		<profile>
 			<id>skip-testcontainers</id>
 			<build>
@@ -400,23 +282,15 @@
 						<configuration>
 							<excludes>
 								<exclude>**/*Testcontainers*.java</exclude>
+								<exclude>**/*E2E.java</exclude>
 							</excludes>
 						</configuration>
-						<executions>
-							<execution>
-								<id>e2e-tests</id>
-								<configuration>
-									<excludes>
-										<exclude>**/*E2E.java</exclude>
-									</excludes>
-								</configuration>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
 		</profile>
 
+		<!-- Profile: jacoco - only activated when needed -->
 		<profile>
 			<id>jacoco</id>
 			<build>
@@ -424,7 +298,7 @@
 					<plugin>
 						<groupId>org.jacoco</groupId>
 						<artifactId>jacoco-maven-plugin</artifactId>
-						<version>0.8.5</version>
+						<version>${jacoco.version}</version>
 						<configuration>
 							<excludes>
 								<exclude>**/model/**</exclude>
@@ -434,10 +308,37 @@
 						</configuration>
 						<executions>
 							<execution>
+								<id>jacoco-prepare</id>
 								<goals>
 									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>jacoco-report</id>
+								<phase>test</phase>
+								<goals>
 									<goal>report</goal>
 								</goals>
+							</execution>
+							<execution>
+								<id>jacoco-check</id>
+								<goals>
+									<goal>check</goal>
+								</goals>
+								<configuration>
+									<rules>
+										<rule>
+											<element>PACKAGE</element>
+											<limits>
+												<limit>
+													<counter>LINE</counter>
+													<value>COVEREDRATIO</value>
+													<minimum>1.0</minimum>
+												</limit>
+											</limits>
+										</rule>
+									</rules>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
@@ -445,18 +346,72 @@
 			</build>
 		</profile>
 
+		<!-- Profile: pitest - mutation testing, only when explicitly activated -->
+		<profile>
+			<id>pitest</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.pitest</groupId>
+						<artifactId>pitest-maven</artifactId>
+						<version>${pitest-maven-version}</version>
+						<executions>
+							<execution>
+								<id>pitest</id>
+								<phase>test</phase>
+								<goals>
+									<goal>mutationCoverage</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<targetClasses>
+								<param>com.example.medicalorganizer.*.*</param>
+							</targetClasses>
+							<targetTests>
+								<param>com.example.medicalorganizer.*.*</param>
+							</targetTests>
+							<excludedClasses>
+								<param>com.example.medicalorganizer.repository.**</param>
+								<param>com.example.medicalorganizer.view.swing.**</param>
+								<param>com.example.medicalorganizer.model.**</param>
+								<param>com.example.medicalorganizer.app.**</param>
+							</excludedClasses>
+							<excludedTestClasses>
+								<param>com.example.medicalorganizer.controller.**IT</param>
+								<param>com.example.medicalorganizer.bdd.**</param>
+								<param>com.example.medicalorganizer.**E2E</param>
+								<param>com.example.medicalorganizer.repository.**</param>
+								<param>com.example.medicalorganizer.view.swing.**</param>
+								<param>com.example.medicalorganizer.controller.racecondition.**</param>
+							</excludedTestClasses>
+							<mutators>
+								<mutator>DEFAULTS</mutator>
+							</mutators>
+							<mutationThreshold>80</mutationThreshold>
+							<outputFormats>
+								<param>HTML</param>
+							</outputFormats>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- Profile: coveralls -->
 		<profile>
 			<id>coveralls</id>
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-					</plugin>
-					<plugin>
 						<groupId>org.eluder.coveralls</groupId>
 						<artifactId>coveralls-maven-plugin</artifactId>
 						<version>${coveralls.version}</version>
+						<configuration>
+							<jacocoReports>
+								<jacocoReport>${project.build.directory}/site/jacoco/jacoco.xml</jacocoReport>
+							</jacocoReports>
+						</configuration>
 						<dependencies>
 							<dependency>
 								<groupId>javax.xml.bind</groupId>
@@ -464,14 +419,6 @@
 								<version>${javax.xml.bind.version}</version>
 							</dependency>
 						</dependencies>
-						<executions>
-							<execution>
-								<phase>verify</phase>
-								<goals>
-									<goal>report</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
