@@ -1,7 +1,7 @@
 package com.example.medicalorganizer.model;
 
 import java.util.Objects;
-
+//Patient entity representing a medical patient record
 public class Patient {
     private String id;
     private String name;
