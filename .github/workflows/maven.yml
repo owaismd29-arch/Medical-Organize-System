@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     name: Build with Java 11 on Linux
 
     steps:
@@ -30,11 +29,11 @@ jobs:
       - name: Install xvfb
         run: sudo apt-get install -y xvfb
 
-      - name: Build and Generate JaCoCo Report
-        run: xvfb-run mvn test jacoco:report -Pjacoco -Dpit.skip=true
+      - name: Build and Test with JaCoCo
+        run: xvfb-run mvn verify -Pjacoco -Dfailsafe.skip=true
 
-      - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-path: src/main/java
+      - name: Upload to Coveralls
+        run: mvn coveralls:report -Pcoveralls -DrepoToken=${{ secrets.COVERALLS_REPO_TOKEN }}
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        continue-on-error: true
