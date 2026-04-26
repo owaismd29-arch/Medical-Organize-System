@@ -1,3 +1,4 @@
+// Repository interface for Patient CRUD operations
 package com.example.medicalorganizer.repository;
 
 import com.example.medicalorganizer.model.Patient;
