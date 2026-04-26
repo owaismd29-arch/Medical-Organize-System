@@ -1,3 +1,4 @@
+// End-to-end tests for Medical Organize System
 package com.example.medicalorganizer.view.swing;
 
 import javax.swing.JFrame;
