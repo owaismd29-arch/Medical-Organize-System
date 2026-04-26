@@ -10,13 +10,18 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 
+## CI/CD Pipeline
+- **Linux Build**: Java, JaCoCo coverage, Coveralls report
+- **SonarCloud**: Code quality, coverage, bugs, code smells analysis  
+- **Mac/Windows**: Cross-platform build verification
+
 # Medical Organize System
 
 A CRUD-based Medical Patient Management System built with Java, following the MVC architecture pattern, backed by MongoDB.
 
 ## Architecture
 
-The project follows the **MVC (Model-View-Controller)** pattern, mirroring a proven blueprint:
+The project follows the **MVC (Model-View-Controller)** pattern:
 
 ```
 src/
