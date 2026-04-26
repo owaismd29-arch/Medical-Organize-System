@@ -1,3 +1,4 @@
+// Swing-based GUI view for Medical Organize System
 package com.example.medicalorganizer.view;
 
 import java.util.List;
