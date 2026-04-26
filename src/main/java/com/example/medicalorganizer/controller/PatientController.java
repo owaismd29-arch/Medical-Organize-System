@@ -4,6 +4,7 @@ import com.example.medicalorganizer.model.Patient;
 import com.example.medicalorganizer.repository.PatientRepository;
 import com.example.medicalorganizer.view.MedicalView;
 
+// Controller responsible for handling all Patient CRUD operations
 public class PatientController {
 
     private PatientRepository patientRepository;
