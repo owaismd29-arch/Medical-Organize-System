@@ -1,9 +1,9 @@
 [![Java CI with Maven in Linux](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/maven.yml)
 [![Java CI with Maven, Docker and SonarCloud in Linux](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/sonar.yml/badge.svg?branch=master)](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/sonar.yml)
-## Coveralls
-[![Coverage Status](https://coveralls.io/repos/github/owaismd29-arch/Medical-Organize-System/badge.svg?branch=master&v=2)](https://coveralls.io/github/owaismd29-arch/Medical-Organize-System?branch=master)
-## Sonar
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+
+Coveralls [![Coverage Status](https://coveralls.io/repos/github/owaismd29-arch/Medical-Organize-System/badge.svg?branch=master&v=2)](https://coveralls.io/github/owaismd29-arch/Medical-Organize-System?branch=master)
+
+Sonar [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=coverage)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=bugs)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
