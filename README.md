@@ -1,9 +1,7 @@
 [![Java CI with Maven in Linux](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/maven.yml)
 [![Java CI with Maven, Docker and SonarCloud in Linux](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/sonar.yml/badge.svg?branch=master)](https://github.com/owaismd29-arch/Medical-Organize-System/actions/workflows/sonar.yml)
-## Coveralls
-[![Coverage Status](https://coveralls.io/repos/github/owaismd29-arch/Medical-Organize-System/badge.svg?branch=master&v=2)](https://coveralls.io/github/owaismd29-arch/Medical-Organize-System?branch=master)
-## Sonar
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
+Coveralls [![Coverage Status](https://coveralls.io/repos/github/owaismd29-arch/Medical-Organize-System/badge.svg?branch=master&v=2)](https://coveralls.io/github/owaismd29-arch/Medical-Organize-System?branch=master)
+Sonar [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=coverage)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=owaismd29-arch_Medical-Organize-System&metric=bugs)](https://sonarcloud.io/summary/new_code?id=owaismd29-arch_Medical-Organize-System)
@@ -32,12 +30,6 @@ A CRUD-based Medical Organize System built in Java with MongoDB integration, fol
 | diagnosis   | String | Medical Diagnosis       |
 | doctorName  | String | Assigned Doctor Name    |
 
-## CRUD Operations
-
-- **Create** — Add a new patient record
-- **Read** — View all patients / find by ID
-- **Update** — Modify existing patient record
-- **Delete** — Remove a patient record
 
 ## Features
 - **CRUD operations** for managing patient medical records
@@ -46,7 +38,7 @@ A CRUD-based Medical Organize System built in Java with MongoDB integration, fol
 - **Test-Driven Development (TDD)** for reliability and maintainability
 - **Unit, Integration, End-to-End, and BDD testing support**
 - **Code coverage analysis** using SonarCloud and Coveralls
-- **Continuous Integration with GitHub Actions across multiple environments
+- **Continuous Integration** with GitHub Actions across multiple environments
 - **Race Condition Tests** for thread-safe CRUD operations
 
 ## Acknowledgments
